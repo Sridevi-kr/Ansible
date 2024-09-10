@@ -52,7 +52,7 @@ ansible -i inv frontend  -e ansible_user=ec2-user -e ansible_password=DevOps321 
 
 Download ,
 
-**If I want to run multiple commands at a time, what can we do ?**
+# **If I want to run multiple commands at a time, what can we do ?**
 
 1.We go with playbook approach ( Ansible scripts are referred as playbooks )
 2. Playbooks are scripted by using YAML ( yet another markup language : presentation language )
