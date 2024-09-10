@@ -79,6 +79,9 @@ Dictionary :
 martin: name: Martin D'vloper job: Developer skills: - python - perl - pascal
 Another way of representing list: fruits: ['Apple', 'Orange', 'Strawberry', 'Mango']
 
+# Command to run YAML 001-plabook.yaml
+ansible-playbook -i inv -e ansible_user=ec2-user -e ansible_password=DevOps321 001-playbook.yaml
+
 IMP Points
 
 One play cannot have 2 tasks with the same name
