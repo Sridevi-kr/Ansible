@@ -58,15 +58,17 @@ Download ,
 2. Playbooks are scripted by using YAML ( yet another markup language : presentation language )
 YAML : kubernets, helmCharts, argoCD, GitHubActions
 
-What is a playbook ?
+# What is a playbook ?
 
 1) A playbook is bothing byt list of plays 
 2) A play is nothing but a list of tasks.
 3) A task is nothing but a list of actions.
-YAML Basics
+
+# YAML Basics
 
 1) Dictionary    ( A key with a value or a keyVale pair is referred as dictionary )
 2) List 
+
 Dictionary :
 
     name: Martin D'vloper
