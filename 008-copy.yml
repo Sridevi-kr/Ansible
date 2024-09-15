@@ -6,3 +6,6 @@
       ansible.builtin.copy:
         src: proxy.conf 
         dest: /home/ec2-user/expense.conf
+
+# If you make changes in the destination, ansible will ignore it
+# But if you make changes inside the source file it will be updated to all connected nodes
