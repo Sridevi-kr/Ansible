@@ -1,6 +1,6 @@
 - name: Demo on facts 
   hosts: all 
-  gather_facts: true               
+  gather_facts: true         # If you mention false here below command won't run      
   tasks:
    - name: Printing a fact  
      ansible.builtin.debug:
