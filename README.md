@@ -88,9 +88,10 @@ One play cannot have 2 tasks with the same name
 If you attempt to use a variable that's not declared, that particular task accessing the variable will be a failure.
 Gathering facts:
 
-A fact is nothing but a system property that would gathered by ansible during every-run.
+# A fact is nothing but a system property that would gathered by ansible during every-run.
 
     ansible -i inv frontend  -e ansible_user=ec2-user -e ansible_password=DevOps321 -m ansible.builtin.gather_facts
+    
 Ansible is very rich with collections.
 
 Problem Statement :

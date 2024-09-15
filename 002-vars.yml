@@ -21,3 +21,5 @@
       
 ### task level variables will have higher precendence thatn play-level variables 
 # cli variable > task variable > play variable 
+# ansible-playbook -i inv -e ansible_user=ec2-user -e ansible_password=DevOps321 -e URL=cli.google.com -e CLIURL=cli.google.com 002-vars.yml
+#The above command will override al the play level and task level variables
