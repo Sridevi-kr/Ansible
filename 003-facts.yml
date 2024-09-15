@@ -2,6 +2,6 @@
   hosts: all 
   gather_facts: false               
   tasks:
-    - name: Printing a fact  
-      ansible.builtin.debug:
-        msg: "CPU Architectire is {{ansible_architecture}}"
+   - name: Printing a fact  
+     ansible.builtin.debug:
+       msg: "CPU Architecture is {{ansible_architecture}}"
