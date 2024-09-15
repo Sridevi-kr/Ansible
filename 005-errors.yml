@@ -1,0 +1,16 @@
+- name : demo on errors
+  hosts: all
+  gather_facts : false
+  tasks: 
+   - name: Check if java process is running or not 
+     ansible.builtin.shell: ps -ef |grep java |grep -v grep
+     ignore_errors: True
+
+   - name : printing a msg
+     ansible.builtin.debug:
+      msg : "This is a second task"
+
+
+# If one task fails, all the other tasks are alos considered failure
+# To avoid that use ignore_errors: True, which lets rest of the command to run even if it is a failure
+    
