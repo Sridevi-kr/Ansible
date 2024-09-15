@@ -7,3 +7,6 @@
       ansible.builtin.package:
        name: nginx
        state: present
+
+# Below command if you run for the second time nothing will happen simce it is already installed 
+# ansible-playbook -i inv -e ansible_user=ec2-user -e ansible_password=DevOps321 007.package.yml
