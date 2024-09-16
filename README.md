@@ -117,16 +117,16 @@ ANSIBLE ROLES ( Usage of this is close to what use see prod approach )
             meta/             #
                 main.yml      #  <-- role dependencies
 
-copy vs template module
+# copy vs template module
 
-Copy just copy - paste from local to remove machine ( You cannot parameterize the files )
+Copy just copy - paste from local to remote machine ( You cannot parameterize the files )
 If you template collection, you can use it for both copy - paste, along with parameterized files
-IMP Regarding Roles and their calling
 
+# IMP Regarding Roles and their calling
 When you call a specific role, tasks mentioned in the main.yml will be executed.
 We can also define tasks in another file tasks/anything.yml and can imports the tasks that are available in anything.yml
-What is Role Dependency In Ansible ?
 
+#What is Role Dependency In Ansible ?
 This helps in making one particular task as pre-requisite.
 For example, running backend first without making mysql operation doesn't work.
 
