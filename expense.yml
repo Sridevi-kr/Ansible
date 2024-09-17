@@ -1,5 +1,5 @@
 - name : Configuring Expense App
   become : true
-  hosts : frontend
+  hosts : "{{COMPONENT}}"
   roles: 
-   - role : frontend
+   - role : "{{COMPONENT}}"
