@@ -11,22 +11,10 @@
     src: proxy.conf
     dest: /etc/nginx/default.d/expense.conf  
 
-- name: Cleanup 
-  ansible.builtin.file:
-    path: "{{APP_PATH}}"
-    state: absent
-
-- name: Creating App directory 
-  ansible.builtin.file:
-    path: "{{APP_PATH}}"
-    state: directory
-
-- name: Download and extracts {{COMPONENT}}
-  ansible.builtin.unarchive:
-    src: https://expense-web-app.s3.amazonaws.com/{{COMPONENT}}.zip
-    dest: "{{APP_PATH}}"
-    remote_src: yes      # If mentioned no, it will be downloaded on the ansible server instead of remote server                       
-# This defines that download and extract will happen on the remote node 
+- name: App Prequisite Tasks
+  ansible.builtin.include_role:      # Through this we can all a specific task from a role
+    name: common                     # Name of the role to be called 
+    tasks_from: pre-req              # Name of the task in the above mentioned role 
  
 
 - name: Restarting {{COMPONENT}}

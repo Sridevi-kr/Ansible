@@ -36,21 +36,10 @@
     name: expense
     comment: Application User 
 
-- name: Cleanup Of Old App Directory
-  ansible.builtin.file:
-    path: "{{APP_PATH}}"
-    state: absent
-
-- name: Creating App Directory
-  ansible.builtin.file:
-    path: "{{APP_PATH}}"
-    state: directory
-
-- name: Download & Extracting {{COMPONENT}}
-  ansible.builtin.unarchive:
-    src: https://expense-web-app.s3.amazonaws.com/{{COMPONENT}}.zip
-    dest: "{{APP_PATH}}"
-    remote_src: yes    
+- name: App Prequisite Tasks
+  ansible.builtin.include_role:      # Through this we can all a specific task from a role
+    name: common                     # Name of the role to be called 
+    tasks_from: pre-req              # Name of the task in the above mentioned role    
 
 - name: Generating node_modules
   community.general.npm:
