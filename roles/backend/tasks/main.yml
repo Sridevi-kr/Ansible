@@ -78,7 +78,7 @@
     login_host: "mysql-{{ENV}}.expense.internal"
 
 - name: Copying Systemd file 
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
 
