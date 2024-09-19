@@ -121,6 +121,16 @@ ANSIBLE ROLES ( Usage of this is close to what use see prod approach )
 
 Copy just copy - paste from local to remote machine ( You cannot parameterize the files )
 If you template collection, you can use it for both copy - paste, along with parameterized files
+Ex: backend main file replace copy with template 
+name: Copying Systemd file 
+  ansible.builtin.copy:     
+  
+  to
+
+name: Copying Systemd file 
+  ansible.builtin.template: 
+
+only now it will search and replace the value, not just copy
 
 # IMP Regarding Roles and their calling
 When you call a specific role, tasks mentioned in the main.yml will be executed.
@@ -140,7 +150,7 @@ Running Playbook using push mechanism :
 
 Ansible-Pull
 
-Ansible also works using pull based mechanism, in this case we don't have to maintain the inventory. But ensure the node that runs this ansible-pull should have ansible installed ?
+Ansible also works using pull based mechanism, in this case we don't have to maintain the inventory. But ensure the node that runs this ansible-pull should have ansible installed!
 
 When to use push vs pull ?
 

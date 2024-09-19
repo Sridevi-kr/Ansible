@@ -18,7 +18,7 @@
 # systemctl start backend 
 
 - name: Configuring hostname 
-  ansible.builtin.shell: set-hostname "{{COMPONENT}}"
+  ansible.builtin.shell: set-hostname "{{COMPONENT}}-{{ENV}}"
 
 - name: Disabling Nodejs                                    # For disabling and enabling nodejs, we didn't find the relevant ansible module
   ansible.builtin.shell: dnf module disable nodejs -y 
@@ -75,14 +75,14 @@
     target: /app/schema/backend.sql
     login_user: root
     login_password: "{{PWD}}"
-    login_host: mysql.expense.internal
+    login_host: "mysql-{{ENV}}.expense.internal"
 
 - name: Copying Systemd file 
   ansible.builtin.copy:
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
 
-- name: Restarting {{COMPONENT}}
+- name: Restarting {{COMPONENT}} on {{ENV}}
   ansible.builtin.systemd_service:
     name: "{{COMPONENT}}" 
     state: restarted

@@ -1,5 +1,5 @@
 - name: Configuring hostname 
-  ansible.builtin.shell: set-hostname "{{COMPONENT}}"
+  ansible.builtin.shell: set-hostname "{{COMPONENT}}-{{ENV}}"
 
 - name: Install {{COMPONENT}}
   ansible.builtin.package:
