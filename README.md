@@ -148,6 +148,9 @@ Running Playbook using push mechanism :
 
     ansible-playbook -i frontend-dev.expense.internal,  -e ansible_user=ec2-user -e ansible_password=DevOps321 -e COMPONENT=frontend -e ENV=dev   expense.yml
 
+    For the second command to work change the expense.yml playbook line hosts:all
+    check exp.yml
+
 Ansible-Pull
 
 Ansible also works using pull based mechanism, in this case we don't have to maintain the inventory. But ensure the node that runs this ansible-pull should have ansible installed!

@@ -1,0 +1,5 @@
+- name: Configuring Expense App 
+  become: true  
+  hosts: localhost
+  roles:
+    - role: "{{COMPONENT}}"
