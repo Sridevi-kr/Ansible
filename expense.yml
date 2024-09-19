@@ -1,4 +1,4 @@
-- name: Configuging Expense App 
+- name: Configuring Expense App 
   become: true  
   hosts: "{{COMPONENT}}"
   roles:
