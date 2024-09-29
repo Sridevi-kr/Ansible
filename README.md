@@ -99,8 +99,7 @@ If we use playbooks directly, we never have any idea on which file is been used 
 You never know which variable file is used by which playbook.
 You cannot reuse the code
 ANSIBLE ROLES ( Usage of this is close to what use see prod approach )
-
-'''
+```
     roles/
         common/               # this hierarchy represents a "role"
             tasks/            #
@@ -119,7 +118,8 @@ ANSIBLE ROLES ( Usage of this is close to what use see prod approach )
             meta/             #
                 main.yml      #  <-- role dependencies
 
-'''
+```
+
 # copy vs template module
 
 Copy just copy - paste from local to remote machine ( You cannot parameterize the files )
