@@ -1,6 +1,3 @@
-- name: Configuring hostname 
-  ansible.builtin.shell: set-hostname "{{COMPONENT}}-{{ENV}}"
-
 - name: Install nginx
   ansible.builtin.package:
     name: nginx
